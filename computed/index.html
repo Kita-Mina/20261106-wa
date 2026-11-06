@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>お金の管理</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <h1>お金の管理</h1>
+    <p>毎月のお金を計算しましょう。</p>
+
+    <div>
+      <label>毎月の予算：</label>
+      <input type="number" v-model.number="budget">
+      円
+    </div>
+
+    <br>
+
+    <div>
+      <label>使ったお金：</label>
+      <input type="number" v-model.number="expenses">
+      円
+    </div>
+
+    <hr>
+
+    <h2>計算結果</h2>
+
+    <p>残りのお金：{{ remaining }} 円</p>
+    <p>使った割合：{{ usageRate }} %</p>
+
+    <h3>{{ status }}</h3>
+    <p>{{ advice }}</p>
+
+    <button @click="resetBudget">リセット</button>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
